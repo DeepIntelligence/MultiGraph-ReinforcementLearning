@@ -2,19 +2,21 @@
 #include "model.h"
 
 struct TrainingPara{
+    TrainingPara(){}
     int numEpisodes;
     int maxIter;
     double learningRate;
     double discount;
-
+    State targetState;
+    int defaultBigValue;
 };
 
 class RLSolver {
 public:
     RLSolver(Model& m, MultiGraph_QL& g, TrainingPara tp);
     void train();
-    double getRewards();
-    bool targetReached();
+    double getRewards(State oldS, State newS);
+    bool targetReached(State s);
 
 
 private:
