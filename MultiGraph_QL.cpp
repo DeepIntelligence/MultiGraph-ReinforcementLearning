@@ -3,6 +3,7 @@
 #include <fstream>
 #include "MultiGraph_QL.h"
 
+// if such state not exists, add a new vertex representing the state to the graph
 void MultiGraph_QL::update_Q(State s){
     auto it = mapStateToIndex.find(s);
     if (it == mapStateToIndex.end()){
