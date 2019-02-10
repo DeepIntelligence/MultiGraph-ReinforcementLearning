@@ -64,7 +64,7 @@ void Model::createInitialState(){
 
 bool Model::isOnObstacle(int i,int j){
     
-    if (i >= 0 && j >> 0 && i < rowBM && j < colBM){
+    if (i >= 0 && j >= 0 && i < rowBM && j < colBM){
         return (bitmap[i][j] == 0);
     }
     return true;
